@@ -29,7 +29,7 @@ export default function Landing() {
         backgroundColor: theme.colors.primaryBlack,
       }}>
         <Carousel autoplay infinite={true}
-          autoplaySpeed={500} 
+          autoplaySpeed={2000} 
           pauseOnHover={pauseOnfocus}
           pauseOnFocus={false}
           effect="scrollx"
@@ -37,6 +37,9 @@ export default function Landing() {
 
           <div className="carousel-image" onMouseDown={handleclick} onMouseLeave={handleleave} onMouseUp={handleleave}>
             <img src={require("../../assets/landing/launchposter_wide.png")}/>
+          </div>
+          <div className="carousel-image" onMouseDown={handleclick} onMouseLeave={handleleave} onMouseUp={handleleave}>
+            <img src={require("../../assets/landing/sevc2023_rushindusk.png")}/>
           </div>
           <div className="carousel-image" onMouseDown={handleclick} onMouseLeave={handleleave} onMouseUp={handleleave}>
             <img src={require("../../assets/landing/GIO6.png")}/>
