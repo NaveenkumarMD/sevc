@@ -16,7 +16,7 @@ const Dashboard = () => {
     const [current, setCurrent] = useState(0);
     const [teamDetails, setTeamDetails] = useState({})
     const { state, dispatch } = useContext(Context)
-    const [teamdetailsDisabled, setTeamdetailsDisabled] = useState(true)
+    const [teamdetailsDisabled, setTeamdetailsDisabled] = useState(false   )
     const [membersdetailsdisabled, setmemberdetailsdeisabled] = useState(true)
     const [phase1disabled, setphase1disabled] = useState(true)
     const [phase2disabled, setphase2disabled] = useState(true)
@@ -56,7 +56,7 @@ const Dashboard = () => {
 
         if ('teamDetails' in state.userdata) {
             setCurrent(1)
-            setTeamdetailsDisabled(true)
+            // setTeamdetailsDisabled(true)
         }
         if (initialpaymentpaid && !('teamDetails' in state.userdata)) {
             setTeamdetailsDisabled(false)
@@ -120,11 +120,11 @@ const Dashboard = () => {
     let teamdetailsprops = {
         handlenext: next,
         handleprev: prev,
-        disabled: membersdetailsdisabled
+        disabled: false
     }
     let paymentprops = {
         handlenext: next,
-        disabled: teamdetailsDisabled,
+        disabled: false,
     }
     let phase1props = {
         handlenext: next,
@@ -256,27 +256,27 @@ const Payment = (props) => {
 
     let a = 0
 
-    const addteammembers = () => {
-        return null
-        if (teammemberscount >= 16) {
-            return alert('Maximum 16 members allowed')
-        }
-        let advisorarray = [...facultyAdvisorDetails]
+    // const addteammembers = () => {
+    //     return null
+    //     if (teammemberscount >= 16) {
+    //         return alert('Maximum 16 members allowed')
+    //     }
+    //     let advisorarray = [...facultyAdvisorDetails]
 
-        advisorarray.push({
-            name: "",
-            gender: "",
-            educational_qualification: "",
-            email: "",
-            phone_number: "",
-            designation: "",
-            department: ""
-        })
-        console.log(advisorarray)
+    //     advisorarray.push({
+    //         name: "",
+    //         gender: "",
+    //         educational_qualification: "",
+    //         email: "",
+    //         phone_number: "",
+    //         designation: "",
+    //         department: ""
+    //     })
+    //     console.log(advisorarray)
 
-        setfacultyAdvisorDetails(advisorarray)
-        setTeammemberscount(teammemberscount + 1)
-    }
+    //     setfacultyAdvisorDetails(advisorarray)
+    //     setTeammemberscount(teammemberscount + 1)
+    // }
     useEffect(() => {
         setTeammemberscount(a)
     }, [a])

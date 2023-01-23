@@ -1,7 +1,7 @@
 import "./App.css";
 import { Button } from "antd";
 import Landing from "./components/Screens/Landing";
-import { Route, BrowserRouter, Routes } from "react-router-dom"
+import { Route, BrowserRouter, Routes } from "react-router-dom";
 import About from "./components/Screens/About";
 import Galleryx from "./components/Screens/Galleryx";
 import Rules from "./components/Screens/Rules";
@@ -12,19 +12,19 @@ import Downloads from "./components/Screens/Downloads";
 import Home from "./components/Screens/Admin/Home";
 import Teamview from "./components/Screens/Admin/Teamview";
 import firebaseapp from "./Firebase/init";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 
 //context
-import { createContext, useContext, useState,useReducer } from "react";
-import {mainreducer,initalstate} from "./Context/index"
+import { createContext, useContext, useState, useReducer } from "react";
+import { mainreducer, initalstate } from "./Context/index";
 import Queries from "./components/Screens/Admin/Queries";
 import Dashboard from "./components/Screens/Dasboard";
 export const Context = createContext();
 
 function App() {
-  const [state,dispatch]=useReducer(mainreducer,initalstate)
+  const [state, dispatch] = useReducer(mainreducer, initalstate);
   return (
-    <Context.Provider value={{state,dispatch}} >
+    <Context.Provider value={{ state, dispatch }}>
       <BrowserRouter>
         <Routes>
           <Route path="/" exact element={<Landing />} />
@@ -39,7 +39,11 @@ function App() {
 
           <Route path="/admin/" exact element={<Home />} />
           <Route path="/admin/queries" exact element={<Queries />} />
-          <Route path="/admin/teamview/:teamname" exact element={<Teamview />} />
+          <Route
+            path="/admin/teamview/:teamname"
+            exact
+            element={<Teamview />}
+          />
         </Routes>
       </BrowserRouter>
     </Context.Provider>
